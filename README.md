@@ -12,7 +12,7 @@ Visualizer是一个辅助深度学习模型中Attention模块可视化的小工�
 
 不管你有没有，反正我有
 
-咨询了**专业人士**的意见后，发现pytorch有个hook可以取出中间结果，大概查了一下，发现确实可以取出中间变量，但需要进行如下类似的hook注册
+咨询了专业人士的意见后，发现pytorch有个hook可以取出中间结果，大概查了一下，发现确实可以取出中间变量，但需要进行如下类似的hook注册
 ```python
 handle = net.conv2.register_forward_hook(hook)
 ```

@@ -1,4 +1,4 @@
-# README
+# Visualizer
 Visualizer是一个辅助深度学习模型中Attention模块可视化的小工具，主要功能是帮助取出嵌套在模型深处的Attention Map
 
 ## 为什么需要Visualizer?
@@ -29,8 +29,8 @@ class Block(nn.Module):
         ...
 ```
 如果要使用hooks其中的问题就是
-1. 我们根本不知道我们要取的attention map怎么以model.bla.bla.bla这样一直点出来！
-2. transformer中attention map每层都有一个，一个个注册实在太麻烦了
+1. 嵌套太深，模块名不清晰，我们根本不知道我们要取的attention map怎么以model.bla.bla.bla这样一直点出来！
+2. 一般来说，Transformer中attention map每层都有一个，一个个注册实在太麻烦了
 
 所以我就思考并查找能否通过更简洁的方法来得到Attention Map（尤其是Transformer的）,而visualizer就是其中的一种，它具有以下特点
 * 精准直接，你可以取出任何变量名的模型中间结果
@@ -97,8 +97,13 @@ cache = get_local.cache # ->  {'Attention.forward': [attention_map]}
 
 因为普通Vit所有Attention map都是在Attention.forward中计算出来的，所以只要简单地装饰一下这个函数，我们就可以同时取出vit中12层Transformer的所有Attention Map！
 
+一个Head的结果
 ![a head](https://github.com/luo3300612/Visualizer/raw/master/assets/head.png)
+
+一层所有Heads的结果
 ![heads](https://github.com/luo3300612/Visualizer/raw/master/assets/heads.png)
+
+某个grid的Attention Map
 ![grid2grid](https://github.com/luo3300612/Visualizer/raw/master/assets/grids.png)
 
 ## 注意

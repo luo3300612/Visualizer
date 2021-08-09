@@ -103,14 +103,15 @@ cache = get_local.cache # ->  {'Attention.forward': [attention_map]}
 
 一个Head的结果
 
-![a head](https://raw.githubusercontent.com/luo3300612/Visualizer/main/assets/head.png)
+![a head](assets/head.png)
 
 一层所有Heads的结果
-![heads](https://raw.githubusercontent.com/luo3300612/Visualizer/main/assets/heads.png)
+
+![heads](assets/heads.png)
 
 某个grid的Attention Map
 
-![grid2grid](https://raw.githubusercontent.com/luo3300612/Visualizer/main/assets/grids.png)
+![grid2grid](assets/grids.png)
 
 ## 注意
 * 想要可视化的变量在函数内部不能被后续的同名变量覆盖了，因为get_local取的是对应名称变量在函数中的**最终值**

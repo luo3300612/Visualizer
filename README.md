@@ -1,12 +1,13 @@
 # Visualizer
 ![](https://img.shields.io/badge/visualizer-v0.0.1-brightgreen)
 ![](https://img.shields.io/badge/python-v3.6-blue)
+
 Visualizer是一个辅助深度学习模型中Attention模块可视化的小工具，主要功能是帮助取出嵌套在模型深处的Attention Map
 
 ## 为什么需要Visualizer?
 为了可视化Attention Map，你是否有以下苦恼
-* 通过return将嵌套在模型深处的Attention Map一层层地返回回来，然后训练模型的时候又不得不还原
-* 使用全局变量在Attention函数中直接记录Attention Map，结果训练的时候忘改回来导致OOM
+* Return大法好：通过return将嵌套在模型深处的Attention Map一层层地返回回来，然后训练模型的时候又不得不还原
+* 全局大法好：使用全局变量在Attention函数中直接记录Attention Map，结果训练的时候忘改回来导致OOM
 
 不管你有没有，反正我有
 

@@ -91,11 +91,15 @@ out = model(data)
 
 cache = get_local.cache # ->  {'Attention.forward': [attention_map]}
 ```
-其他细节请参考demo.ipynb文件
+其他细节请参考[demo.ipynb](https://nbviewer.jupyter.org/github/luo3300612/Visualizer/blob/main/demo.ipynb)文件
 ## 可视化结果
-这里是可视化vit_small的结果，全部内容在demo.ipynb文件里
+这里是部分可视化vit_small的结果，全部内容在[demo.ipynb](https://nbviewer.jupyter.org/github/luo3300612/Visualizer/blob/main/demo.ipynb)文件里
+
 因为普通Vit所有Attention map都是在Attention.forward中计算出来的，所以只要简单地装饰一下这个函数，我们就可以同时取出vit中12层Transformer的所有Attention Map！
 
+![a head](https://github.com/luo3300612/Visualizer/raw/master/assets/head.png)
+![heads](https://github.com/luo3300612/Visualizer/raw/master/assets/heads.png)
+![grid2grid](https://github.com/luo3300612/Visualizer/raw/master/assets/grids.png)
 
 ## 注意
 * 想要可视化的变量在函数内部不能被后续的同名变量覆盖了，因为get_local取的是对应名称变量在函数中的**最终值**

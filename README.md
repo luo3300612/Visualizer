@@ -1,4 +1,6 @@
 # Visualizer
+![](https://img.shields.io/badge/visualizer-v0.0.1-brightgreen)
+![](https://img.shields.io/badge/python-v3.6-blue)
 Visualizer是一个辅助深度学习模型中Attention模块可视化的小工具，主要功能是帮助取出嵌套在模型深处的Attention Map
 
 ## 为什么需要Visualizer?

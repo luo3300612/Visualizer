@@ -51,18 +51,21 @@ python setup.py install
 安装完成后，只需要用get_local装饰一下Attention的函数，forward之后就可以拿到函数内与装饰器参数同名的局部变量啦~
 ### Usage1
 比如说，我想要函数里的`attention_map`变量：
+在模型文件里，我们这么写
 ```python
 from visualizer import get_local
-get_local.activate() # 激活visualizer
-
-from ... import model
-
 @get_local('attention_map')
 def your_attention_function(*args, **kwargs):
     ...
     attention_map = ... 
     ...
     return ...
+```
+然后在可视化代码里，我们这么写
+```
+from visualizer import get_local
+get_local.activate() # 激活装饰器
+from ... import model # 被装饰的模型一定要在装饰器激活之后导入！！
 
 # load model and data
 ...
@@ -76,7 +79,6 @@ cache = get_local.cache # ->  {'your_attention_function': [attention_map]}
 使用Pytorch时我们往往会将模块定义成一个类，此时也是一样只要装饰类内计算出attention_map的函数即可
 ```python
 from visualizer import get_local
-get_local.activate() # 激活visualizer
 
 class Attention(nn.Module):
     def __init__(self):
@@ -88,12 +90,6 @@ class Attention(nn.Module):
         attn_map = ...
         ...
         return ...
-        
-# load model and data
-...
-out = model(data)
-
-cache = get_local.cache # ->  {'Attention.forward': [attention_map]}
 ```
 其他细节请参考[demo.ipynb](https://nbviewer.jupyter.org/github/luo3300612/Visualizer/blob/main/demo.ipynb)文件
 ## 可视化结果

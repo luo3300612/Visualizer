@@ -62,7 +62,7 @@ def your_attention_function(*args, **kwargs):
     return ...
 ```
 然后在可视化代码里，我们这么写
-```
+```python
 from visualizer import get_local
 get_local.activate() # 激活装饰器
 from ... import model # 被装饰的模型一定要在装饰器激活之后导入！！

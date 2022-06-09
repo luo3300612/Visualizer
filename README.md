@@ -45,6 +45,7 @@ class Block(nn.Module):
 ## 用法
 ### 安装
 ```shell
+pip install bytecode
 python setup.py install
 ```
 
